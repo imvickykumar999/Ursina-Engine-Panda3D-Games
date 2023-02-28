@@ -1,27 +1,12 @@
-# Panda3D-Games
----
 
-## Installing Panda3D
+# Games Screenshots
 
-The latest Panda3D SDK can be downloaded from
-[this page](https://www.panda3d.org/download/sdk-1-10-13/).
-If you are familiar with installing Python packages, you can use
-the following command:
+- [panda3d_demo.py](https://github.com/imvickykumar999/3D-Games/blob/main/panda3d_demo.py)
 
-```bash
-pip install panda3d
-```
+> [![image](https://user-images.githubusercontent.com/50515418/221864328-138d2036-29f2-4253-835a-09798fd31705.png)](https://github.com/panda3d/panda3d/tree/master/samples)
 
-The easiest way to install the latest development build of Panda3D
-into an existing Python installation is using the following command:
+--------------------
 
-```bash
-pip install --pre --extra-index-url https://archive.panda3d.org/ panda3d
-```
+- [ursina_demo.py](https://github.com/imvickykumar999/3D-Games/blob/main/ursina_demo.py)
 
-If this command fails, please make sure your version of pip is up-to-date.
-
-If you prefer to install the full SDK with all tools, the latest development
-builds can be obtained from [this page](https://www.panda3d.org/download.php?version=devel&sdk).
-
-These are automatically kept up-to-date with the latest GitHub version of Panda.
+> [![image](https://user-images.githubusercontent.com/50515418/221864823-e8afa781-5c2c-4cd0-be10-c0a27a2bb7a4.png)](https://github.com/imvickykumar999/ursina/tree/master/samples)
