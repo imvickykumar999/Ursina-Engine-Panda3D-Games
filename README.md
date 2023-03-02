@@ -2,7 +2,7 @@
 # Tutorial PlayList
 
 - [Ursina Engine – 3D Python Game Engine Tutorial](https://www.youtube.com/watch?v=w2gu9Ah95l0&list=PLgQYnHnDxgtg-I3m01mGc5wfJwqpT9S3i&index=1)
-- [Minecraft in Python](https://www.youtube.com/watch?v=vX4l-qozib8&list=PLmP1LNMzp97pQe1FiGpdOLKeWYfTMZM7n)
+- [Minecraft in Python](https://www.youtube.com/watch?v=vX4l-qozib8&list=PLmP1LNMzp97pQe1FiGpdOLKeWYfTMZM7n&index=1)
 
 ---------------------------------
 
