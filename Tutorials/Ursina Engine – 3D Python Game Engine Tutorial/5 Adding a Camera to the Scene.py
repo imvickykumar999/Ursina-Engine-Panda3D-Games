@@ -2,13 +2,19 @@
 from ursina import *
 
 def update():
-    global x, speed
-    x += time.dt*speed*1.2
+    global z, speed
 
-    if abs(x)>5:
+    # cube.rotation_x += time.dt*107.34
+    cube.rotation_y -= time.dt*20.7
+    # cube.rotation_z -= time.dt*73.29
+
+    z -= time.dt*speed
+
+    if abs(z)>5:
         speed *= -1
     
-    camera.position=(x,1.5,-20)
+    # camera.position=(x,1.5,-50)
+    camera.rotation_z=z*10
 
 
 app = Ursina()
@@ -19,6 +25,6 @@ cube = Entity(model="cube",
               texture='brick',
               )
 
-x=0
+z=0
 speed=1
 app.run()
