@@ -4,51 +4,29 @@
 from ursina import *
 
 def update():
-    global speed1, speed2
+    global speed, speed2
 
-    cube1.rotation_x -= time.dt*107.34
-    cube1.rotation_y += time.dt*speed1*50
+    cube.rotation_x += time.dt*107.34
+    cube.rotation_y -= time.dt*20.7
+    cube.rotation_z -= time.dt*73.29
 
-    cube1.x += time.dt*speed1*1.05
-    sphere1.y += time.dt*speed2
+    cube.x=cube.x-time.dt*speed
+    if abs(cube.x)>5:
+        speed=speed*(-1)
 
-    if abs(cube1.x)>5:
-        speed1 *= -1.04
+    cube2.y=cube2.y+time.dt*speed2
+    if abs(cube2.y)>3:
+        speed2=speed2*(-1.02)
 
-    if abs(sphere1.y)>3:
-        speed2 *= -1
-
-app = Ursina()
-speed1 = 1.02
-speed2 = -1
-
-cube1=Entity(model = 'cube', 
-            color = color.red,
-            scale=1.2,
+app=Ursina()
+speed=.6
+cube=Entity(model='cube',
+            color=color.red,
+            scale=1.4
             )
-
-sphere1=Entity(model = 'sphere', 
-            color = color.blue,
-            position=(-.01,.03,-.16),        
+speed2=.41
+cube2=Entity(model='sphere',
+            color=color.blue,
+            # position=(.02,-.1,.03)
             )
-
 app.run()
-
-
-
-'''
-Speed : -4.222377550487301e+257
-Speed : 5.404643264623745e+257
-Speed : -6.917943378718394e+257
-Speed : 8.854967524759545e+257
-Speed : inf
-Speed : -inf
-Assertion failed: !pos.is_nan() at line 402 of c:\buildslave\sdk-windows-amd64\build\panda\src\pgraph\transformState.cxx
-* interrupt by keyboard
-'''
-
-# Above `speed` are Last few lines before error 
-# for, speed *= -1.58 
-# XD...
-# https://stackoverflow.com/a/74376546/11493297
-# AssertionError: !mat.is_nan() at line 322 of c:\buildslave\sdk-windows-amd64\build\panda\src\pgraph\transformState.cxx
