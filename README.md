@@ -33,7 +33,7 @@
 
 ---------------------
 
-- [`cheap_physics.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/ursina_samples/cheap_physics.py)
+- [`Minecraft_cheap_physics.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/ursina_samples/cheap_physics.py)
 
 > ![image](https://user-images.githubusercontent.com/50515418/221924592-38de7ab9-83e5-4321-8672-49bbf8bdeba8.png)
 
