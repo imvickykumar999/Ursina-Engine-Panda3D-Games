@@ -47,6 +47,6 @@
 
 - `Just Cause 2 Game` : [`Download`](https://drive.google.com/drive/u/1/folders/1Wf_P-342R4OMO7sIQV2AHJET3h4eZe4W)
 
-> [![image](https://user-images.githubusercontent.com/50515418/222048156-a8f4e377-e2c6-46e2-8fa5-e9654049f3ca.png)](https://www.youtube.com/watch?v=eOtUhJXLH2Q)
+> [![image](https://user-images.githubusercontent.com/50515418/222048156-a8f4e377-e2c6-46e2-8fa5-e9654049f3ca.png)](https://youtu.be/eOtUhJXLH2Q?t=1598)
 
 
