@@ -1,4 +1,12 @@
 
+# Games Screenshots / Videos 
+
+- [`Setting Boundaries for the Movement.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/Tutorials/Ursina%20Engine%20%E2%80%93%203D%20Python%20Game%20Engine%20Tutorial/4%20Setting%20Boundaries%20for%20the%20Movement.py#L35)
+
+> https://user-images.githubusercontent.com/50515418/222423897-075f981d-a40f-4e5c-8377-bc42a957cd75.mp4
+
+----------------------------
+
 # Tutorial PlayList
 
 - [Ursina Engine – 3D Python Game Engine Tutorial](https://www.youtube.com/watch?v=w2gu9Ah95l0&list=PLgQYnHnDxgtg-I3m01mGc5wfJwqpT9S3i&index=1)
@@ -16,14 +24,6 @@
 - [Zippy_Codes](https://github.com/imvickykumar999/Zippy_Codes)
 
 ------------------------
-
-# Games Screenshots / Videos 
-
-- [`Setting Boundaries for the Movement.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/Tutorials/Ursina%20Engine%20%E2%80%93%203D%20Python%20Game%20Engine%20Tutorial/4%20Setting%20Boundaries%20for%20the%20Movement.py#L18)
-
-> https://user-images.githubusercontent.com/50515418/222341296-761ed089-b931-4a81-8490-0ab6b25a2fab.mp4
-
-----------------------------
 
 - [`panda3d_demo.py`](https://github.com/imvickykumar999/3D-Games/blob/main/panda3d_demo.py)
 
