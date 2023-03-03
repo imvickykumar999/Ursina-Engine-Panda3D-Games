@@ -1,6 +1,4 @@
 
-# https://www.youtube.com/watch?v=i1CSwOEWPcA&list=PLgQYnHnDxgtg-I3m01mGc5wfJwqpT9S3i&index=4
-
 from ursina import *
 
 def update():

@@ -1,6 +1,4 @@
 
-# https://www.youtube.com/watch?v=dyf8ZaH0hC8&list=PLgQYnHnDxgtg-I3m01mGc5wfJwqpT9S3i&index=3
-
 from ursina import *
 from random import randint
 
