@@ -37,7 +37,7 @@ cube = Entity(model='cube',
 
 instructions = '''
 
-Camera Angle is Z = -30
+    Camera Angle is Z = -30
 
     Press w to move up
     Press s to move down
@@ -50,10 +50,12 @@ Camera Angle is Z = -30
 Press c to rotate in x axis
 Press q to rotate in y axis
 Press e to rotate in z axis
+
+    - AWS :D keys.
 '''
 
 text = Text(instructions, 
-            origin=(-1.3, -.8),
+            origin=(-1.3, -.6),
             font='VeraMono.ttf', 
             color=color.yellow,
             resolution=100*Text.size,
