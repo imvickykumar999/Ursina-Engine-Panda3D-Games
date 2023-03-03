@@ -1,6 +1,10 @@
 
 # Games Screenshots / Videos 
 
+- [`Rotating Texture.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/Tutorials/Ursina%20Engine%20%E2%80%93%203D%20Python%20Game%20Engine%20Tutorial/6%20Making%20Cubes%20More%20Colorful%20with%20Texture.py#L7)
+
+> https://user-images.githubusercontent.com/50515418/222709081-99517ef4-c644-438a-bc60-5a23fde3cc1b.mp4
+
 - [`Setting Boundaries for the Movement.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/Tutorials/Ursina%20Engine%20%E2%80%93%203D%20Python%20Game%20Engine%20Tutorial/4%20Setting%20Boundaries%20for%20the%20Movement.py#L35)
 
 > https://user-images.githubusercontent.com/50515418/222423897-075f981d-a40f-4e5c-8377-bc42a957cd75.mp4
