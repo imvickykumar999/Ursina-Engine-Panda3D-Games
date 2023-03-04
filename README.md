@@ -1,11 +1,11 @@
 
 # Games Screenshots / Videos 
 
-- [`Rotating Texture.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/Tutorials/Ursina%20Engine%20%E2%80%93%203D%20Python%20Game%20Engine%20Tutorial/6%20Making%20Cubes%20More%20Colorful%20with%20Texture.py#L7)
+- `Rotating Texture.py`
 
 > https://user-images.githubusercontent.com/50515418/222709081-99517ef4-c644-438a-bc60-5a23fde3cc1b.mp4
 
-- [`Setting Boundaries for the Movement.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/Tutorials/Ursina%20Engine%20%E2%80%93%203D%20Python%20Game%20Engine%20Tutorial/4%20Setting%20Boundaries%20for%20the%20Movement.py#L35)
+- `Setting Boundaries for the Movement.py`
 
 > https://user-images.githubusercontent.com/50515418/222423897-075f981d-a40f-4e5c-8377-bc42a957cd75.mp4
 
@@ -29,31 +29,31 @@
 
 ------------------------
 
-- [`panda3d_demo.py`](https://github.com/imvickykumar999/3D-Games/blob/main/panda3d_demo.py)
+- `panda3d_demo.py`
 
 > ![image](https://user-images.githubusercontent.com/50515418/221864328-138d2036-29f2-4253-835a-09798fd31705.png)
 
 --------------------
 
-- [`ursina_demo.py`](https://github.com/imvickykumar999/3D-Games/blob/main/ursina_demo.py)
+- `ursina_demo.py`
 
 > ![image](https://user-images.githubusercontent.com/50515418/221864823-e8afa781-5c2c-4cd0-be10-c0a27a2bb7a4.png)
 
 ---------------------
 
-- [`rubix_cube.py`](https://github.com/imvickykumar999/2D.np-Rubix-Cube/blob/master/2D%20Cube/3Dcube.py)
+- `rubix_cube.py`
 
 > ![image](https://user-images.githubusercontent.com/50515418/221870549-eb6095b4-198f-45cc-a3a6-fe17894c99f2.png)
 
 ----------------
 
-- [`tic_tac_toe.py`](https://github.com/imvickykumar999/TIC-TAC-TOE-Game.exe/blob/main/ursina_tic_tac_toe.py)
+- `tic_tac_toe.py`
 
 > ![image](https://user-images.githubusercontent.com/50515418/221874169-beaec106-aeed-407e-9e71-3da78f497f17.png)
 
 ---------------------
 
-- [`Minecraft_cheap_physics.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/ursina_samples/cheap_physics.py)
+- `Minecraft_cheap_physics.py`
 
 > ![image](https://user-images.githubusercontent.com/50515418/221924592-38de7ab9-83e5-4321-8672-49bbf8bdeba8.png)
 
