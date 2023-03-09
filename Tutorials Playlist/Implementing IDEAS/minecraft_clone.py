@@ -31,14 +31,17 @@ opt_texture = [
 ]
 
 class Voxel(Button):
-    def __init__(self, position=(0,0,0)):
+    def __init__(self, position=(0,0,0), 
+                 texture='grass',
+                 default_color=color.green,
+                 ):
         super().__init__(parent=scene,
             position=position,
             model='cube',
             origin_y=.5,
-            texture='brick',
+            texture=texture,
             highlight_color=color.red,
-            color=color.orange,
+            color=default_color,
         )
 
 for z in range(20):
@@ -49,7 +52,10 @@ def input(key):
     if key == 'left mouse down':
         hit_info = raycast(camera.world_position, camera.forward, distance=100)
         if hit_info.hit:
-            Voxel(position=hit_info.entity.position + hit_info.normal)
+            Voxel(position=hit_info.entity.position + hit_info.normal, 
+                  texture='brick',
+                  default_color=color.orange,
+                  )
     if key == 'right mouse down' and mouse.hovered_entity:
         destroy(mouse.hovered_entity)
 
