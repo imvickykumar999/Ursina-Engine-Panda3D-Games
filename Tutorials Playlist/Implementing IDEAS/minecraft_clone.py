@@ -41,8 +41,8 @@ class Voxel(Button):
             color=color.orange,
         )
 
-for z in range(15):
-    for x in range(15):
+for z in range(20):
+    for x in range(20):
         voxel = Voxel(position=(x,0,z))
 
 def input(key):
@@ -53,5 +53,7 @@ def input(key):
     if key == 'right mouse down' and mouse.hovered_entity:
         destroy(mouse.hovered_entity)
 
+
+Sky()
 player = FirstPersonController()
 app.run()
