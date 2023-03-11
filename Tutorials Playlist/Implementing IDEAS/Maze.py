@@ -1,4 +1,264 @@
 
+# Maze generator -- Randomized Prim Algorithm
+import random
+from colorama import init
+from colorama import Fore
+
+def returnMaze(h=13, w=13):
+    ## Functions
+    def printMaze(maze):
+        for i in range(0, height):
+            for j in range(0, width):
+                if (maze[i][j] == 'u'):
+                    print(Fore.WHITE + str(maze[i][j]), end="   ")
+                elif (maze[i][j] == 'c'):
+                    print(Fore.GREEN + str(maze[i][j]), end="   ")
+                else:
+                    print(Fore.RED + str(maze[i][j]), end="   ")
+                
+            print('\n')
+
+    # Find number of surrounding cells
+    def surroundingCells(rand_wall):
+        s_cells = 0
+        if (maze[rand_wall[0]-1][rand_wall[1]] == 'c'):
+            s_cells += 1
+        if (maze[rand_wall[0]+1][rand_wall[1]] == 'c'):
+            s_cells += 1
+        if (maze[rand_wall[0]][rand_wall[1]-1] == 'c'):
+            s_cells +=1
+        if (maze[rand_wall[0]][rand_wall[1]+1] == 'c'):
+            s_cells += 1
+
+        return s_cells
+
+
+    ## Main code
+    # Init variables
+    wall = 'w'
+    cell = 'c'
+    unvisited = 'u'
+    height = h
+    width = w
+    maze = []
+
+    # Initialize colorama
+    init()
+
+    # Denote all cells as unvisited
+    for i in range(0, height):
+        line = []
+        for j in range(0, width):
+            line.append(unvisited)
+        maze.append(line)
+
+    # Randomize starting point and set it a cell
+    starting_height = int(random.random()*height)
+    starting_width = int(random.random()*width)
+    if (starting_height == 0):
+        starting_height += 1
+    if (starting_height == height-1):
+        starting_height -= 1
+    if (starting_width == 0):
+        starting_width += 1
+    if (starting_width == width-1):
+        starting_width -= 1
+
+    # Mark it as cell and add surrounding walls to the list
+    maze[starting_height][starting_width] = cell
+    walls = []
+    walls.append([starting_height - 1, starting_width])
+    walls.append([starting_height, starting_width - 1])
+    walls.append([starting_height, starting_width + 1])
+    walls.append([starting_height + 1, starting_width])
+
+    # Denote walls in maze
+    maze[starting_height-1][starting_width] = 'w'
+    maze[starting_height][starting_width - 1] = 'w'
+    maze[starting_height][starting_width + 1] = 'w'
+    maze[starting_height + 1][starting_width] = 'w'
+
+    while (walls):
+        # Pick a random wall
+        rand_wall = walls[int(random.random()*len(walls))-1]
+
+        # Check if it is a left wall
+        if (rand_wall[1] != 0):
+            if (maze[rand_wall[0]][rand_wall[1]-1] == 'u' and maze[rand_wall[0]][rand_wall[1]+1] == 'c'):
+                # Find the number of surrounding cells
+                s_cells = surroundingCells(rand_wall)
+
+                if (s_cells < 2):
+                    # Denote the new path
+                    maze[rand_wall[0]][rand_wall[1]] = 'c'
+
+                    # Mark the new walls
+                    # Upper cell
+                    if (rand_wall[0] != 0):
+                        if (maze[rand_wall[0]-1][rand_wall[1]] != 'c'):
+                            maze[rand_wall[0]-1][rand_wall[1]] = 'w'
+                        if ([rand_wall[0]-1, rand_wall[1]] not in walls):
+                            walls.append([rand_wall[0]-1, rand_wall[1]])
+
+
+                    # Bottom cell
+                    if (rand_wall[0] != height-1):
+                        if (maze[rand_wall[0]+1][rand_wall[1]] != 'c'):
+                            maze[rand_wall[0]+1][rand_wall[1]] = 'w'
+                        if ([rand_wall[0]+1, rand_wall[1]] not in walls):
+                            walls.append([rand_wall[0]+1, rand_wall[1]])
+
+                    # Leftmost cell
+                    if (rand_wall[1] != 0):	
+                        if (maze[rand_wall[0]][rand_wall[1]-1] != 'c'):
+                            maze[rand_wall[0]][rand_wall[1]-1] = 'w'
+                        if ([rand_wall[0], rand_wall[1]-1] not in walls):
+                            walls.append([rand_wall[0], rand_wall[1]-1])
+                
+
+                # Delete wall
+                for wall in walls:
+                    if (wall[0] == rand_wall[0] and wall[1] == rand_wall[1]):
+                        walls.remove(wall)
+
+                continue
+
+        # Check if it is an upper wall
+        if (rand_wall[0] != 0):
+            if (maze[rand_wall[0]-1][rand_wall[1]] == 'u' and maze[rand_wall[0]+1][rand_wall[1]] == 'c'):
+
+                s_cells = surroundingCells(rand_wall)
+                if (s_cells < 2):
+                    # Denote the new path
+                    maze[rand_wall[0]][rand_wall[1]] = 'c'
+
+                    # Mark the new walls
+                    # Upper cell
+                    if (rand_wall[0] != 0):
+                        if (maze[rand_wall[0]-1][rand_wall[1]] != 'c'):
+                            maze[rand_wall[0]-1][rand_wall[1]] = 'w'
+                        if ([rand_wall[0]-1, rand_wall[1]] not in walls):
+                            walls.append([rand_wall[0]-1, rand_wall[1]])
+
+                    # Leftmost cell
+                    if (rand_wall[1] != 0):
+                        if (maze[rand_wall[0]][rand_wall[1]-1] != 'c'):
+                            maze[rand_wall[0]][rand_wall[1]-1] = 'w'
+                        if ([rand_wall[0], rand_wall[1]-1] not in walls):
+                            walls.append([rand_wall[0], rand_wall[1]-1])
+
+                    # Rightmost cell
+                    if (rand_wall[1] != width-1):
+                        if (maze[rand_wall[0]][rand_wall[1]+1] != 'c'):
+                            maze[rand_wall[0]][rand_wall[1]+1] = 'w'
+                        if ([rand_wall[0], rand_wall[1]+1] not in walls):
+                            walls.append([rand_wall[0], rand_wall[1]+1])
+
+                # Delete wall
+                for wall in walls:
+                    if (wall[0] == rand_wall[0] and wall[1] == rand_wall[1]):
+                        walls.remove(wall)
+
+                continue
+
+        # Check the bottom wall
+        if (rand_wall[0] != height-1):
+            if (maze[rand_wall[0]+1][rand_wall[1]] == 'u' and maze[rand_wall[0]-1][rand_wall[1]] == 'c'):
+
+                s_cells = surroundingCells(rand_wall)
+                if (s_cells < 2):
+                    # Denote the new path
+                    maze[rand_wall[0]][rand_wall[1]] = 'c'
+
+                    # Mark the new walls
+                    if (rand_wall[0] != height-1):
+                        if (maze[rand_wall[0]+1][rand_wall[1]] != 'c'):
+                            maze[rand_wall[0]+1][rand_wall[1]] = 'w'
+                        if ([rand_wall[0]+1, rand_wall[1]] not in walls):
+                            walls.append([rand_wall[0]+1, rand_wall[1]])
+                    if (rand_wall[1] != 0):
+                        if (maze[rand_wall[0]][rand_wall[1]-1] != 'c'):
+                            maze[rand_wall[0]][rand_wall[1]-1] = 'w'
+                        if ([rand_wall[0], rand_wall[1]-1] not in walls):
+                            walls.append([rand_wall[0], rand_wall[1]-1])
+                    if (rand_wall[1] != width-1):
+                        if (maze[rand_wall[0]][rand_wall[1]+1] != 'c'):
+                            maze[rand_wall[0]][rand_wall[1]+1] = 'w'
+                        if ([rand_wall[0], rand_wall[1]+1] not in walls):
+                            walls.append([rand_wall[0], rand_wall[1]+1])
+
+                # Delete wall
+                for wall in walls:
+                    if (wall[0] == rand_wall[0] and wall[1] == rand_wall[1]):
+                        walls.remove(wall)
+
+
+                continue
+
+        # Check the right wall
+        if (rand_wall[1] != width-1):
+            if (maze[rand_wall[0]][rand_wall[1]+1] == 'u' and maze[rand_wall[0]][rand_wall[1]-1] == 'c'):
+
+                s_cells = surroundingCells(rand_wall)
+                if (s_cells < 2):
+                    # Denote the new path
+                    maze[rand_wall[0]][rand_wall[1]] = 'c'
+
+                    # Mark the new walls
+                    if (rand_wall[1] != width-1):
+                        if (maze[rand_wall[0]][rand_wall[1]+1] != 'c'):
+                            maze[rand_wall[0]][rand_wall[1]+1] = 'w'
+                        if ([rand_wall[0], rand_wall[1]+1] not in walls):
+                            walls.append([rand_wall[0], rand_wall[1]+1])
+                    if (rand_wall[0] != height-1):
+                        if (maze[rand_wall[0]+1][rand_wall[1]] != 'c'):
+                            maze[rand_wall[0]+1][rand_wall[1]] = 'w'
+                        if ([rand_wall[0]+1, rand_wall[1]] not in walls):
+                            walls.append([rand_wall[0]+1, rand_wall[1]])
+                    if (rand_wall[0] != 0):	
+                        if (maze[rand_wall[0]-1][rand_wall[1]] != 'c'):
+                            maze[rand_wall[0]-1][rand_wall[1]] = 'w'
+                        if ([rand_wall[0]-1, rand_wall[1]] not in walls):
+                            walls.append([rand_wall[0]-1, rand_wall[1]])
+
+                # Delete wall
+                for wall in walls:
+                    if (wall[0] == rand_wall[0] and wall[1] == rand_wall[1]):
+                        walls.remove(wall)
+
+                continue
+
+        # Delete the wall from the list anyway
+        for wall in walls:
+            if (wall[0] == rand_wall[0] and wall[1] == rand_wall[1]):
+                walls.remove(wall)
+        
+
+
+    # Mark the remaining unvisited cells as walls
+    for i in range(0, height):
+        for j in range(0, width):
+            if (maze[i][j] == 'u'):
+                maze[i][j] = 'w'
+
+    # Set entrance and exit
+    for i in range(0, width):
+        if (maze[1][i] == 'c'):
+            maze[0][i] = 'c'
+            break
+
+    for i in range(width-1, 0, -1):
+        if (maze[height-2][i] == 'c'):
+            maze[height-1][i] = 'c'
+            break
+
+
+    # Print final maze
+    # printMaze(maze)
+    return maze
+
+# ---------------------------------------
+
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
@@ -20,42 +280,54 @@ class Voxel(Button):
         )
 
 # garden
+y=0
 for z in range(n):
     for x in range(n):
-        voxel = Voxel(position=(x,0,z))
+        # print(z,x)
+        voxel = Voxel(position=(x,y,z))
 
-# https://youtu.be/vX4l-qozib8?list=PLmP1LNMzp97pQe1FiGpdOLKeWYfTMZM7n
-# w=n
-# for i in range(w*w):
-#     bud = Entity(model='cube', color=color.orange,
-#                  texture='brick')
-#     bud.x = i/w
-#     bud.z = i%w
-#     bud.y=1
 
-# brick maze, need better logic to create bhul-bhulaiya !!!
-for y in range(1,3):
-    for z in range(0,n,3):
-        for x in range(n):
+y_maze = returnMaze(n,n)
+# print(y_maze)
+
+y=1
+# for y in range(1,3): # higher walls to avoid cheating, don't press space(jump)
+for z in range(len(y_maze)):
+    for x in range(len(y_maze[z])):
+        # print(z,x)
+
+        if y_maze[z][x] == 'w':
+            voxel = Voxel(position=(x,y,z), 
+                        texture='brick',
+                        default_color=color.orange,
+                        )
+y=1
+# for y in range(1,3): # border walls
+for z in range(n):
+    for x in range(n):
+        if(z == 0 or z == n - 1 or x == 0 or x == n - 1):
+            # print(z,x)
+
             Voxel(position=(x,y,z), 
                     texture='brick',
                     default_color=color.orange,
                     )
 
-def input(key):
-    if key == 'left mouse down':
-        hit_info = raycast(camera.world_position, camera.forward, distance=100)
-        if hit_info.hit:
-            Voxel(position=hit_info.entity.position + hit_info.normal, 
-                  texture='brick',
-                  default_color=color.orange,
-                  )
-    if key == 'right mouse down' and mouse.hovered_entity:
-        destroy(mouse.hovered_entity)
 
-# window.fullscreen = 1
+# def input(key):
+#     if key == 'left mouse down':
+#         hit_info = raycast(camera.world_position, camera.forward, distance=100)
+#         if hit_info.hit:
+#             Voxel(position=hit_info.entity.position + hit_info.normal, 
+#                   texture='brick',
+#                   default_color=color.orange,
+#                   )
+#     if key == 'right mouse down' and mouse.hovered_entity:
+#         destroy(mouse.hovered_entity)
+
+
+window.fullscreen = 1
 player = FirstPersonController(gravity=1)
-# https://stackoverflow.com/a/75692459/11493297
 
 def update():
     if player.y < -10:
@@ -63,38 +335,3 @@ def update():
 
 Sky()
 app.run()
-
-# ---------------------------
-
-# import df_maze as df
-# print(df.returnMaze())
-
-'''
-w   c   w   w   w   w   w   w   w   w   w   w   w
-
-w   c   w   c   w   w   c   w   c   w   c   w   w
-
-w   c   c   c   w   w   c   w   c   w   c   c   w
-
-w   w   w   c   w   c   c   w   c   w   c   w   w
-
-w   w   w   c   w   w   c   c   c   c   c   c   w
-
-w   c   c   c   w   w   w   w   w   c   w   w   w
-
-w   w   w   c   w   c   w   w   c   c   c   c   w
-
-w   c   w   c   w   c   w   c   c   w   c   w   w
-
-w   c   c   c   c   c   w   c   w   w   w   w   w
-
-w   w   w   c   w   c   c   c   c   w   w   c   w
-
-w   w   w   w   w   c   w   w   c   c   w   c   w
-
-w   c   c   c   c   c   c   w   w   c   c   c   w
-
-w   w   w   w   w   w   w   w   w   w   w   c   w
-
-[['w', 'c', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w'], ['w', 'c', 'w', 'c', 'w', 'w', 'c', 'w', 'c', 'w', 'c', 'w', 'w'], ['w', 'c', 'c', 'c', 'w', 'w', 'c', 'w', 'c', 'w', 'c', 'c', 'w'], ['w', 'w', 'w', 'c', 'w', 'c', 'c', 'w', 'c', 'w', 'c', 'w', 'w'], ['w', 'w', 'w', 'c', 'w', 'w', 'c', 'c', 'c', 'c', 'c', 'c', 'w'], ['w', 'c', 'c', 'c', 'w', 'w', 'w', 'w', 'w', 'c', 'w', 'w', 'w'], ['w', 'w', 'w', 'c', 'w', 'c', 'w', 'w', 'c', 'c', 'c', 'c', 'w'], ['w', 'c', 'w', 'c', 'w', 'c', 'w', 'c', 'c', 'w', 'c', 'w', 'w'], ['w', 'c', 'c', 'c', 'c', 'c', 'w', 'c', 'w', 'w', 'w', 'w', 'w'], ['w', 'w', 'w', 'c', 'w', 'c', 'c', 'c', 'c', 'w', 'w', 'c', 'w'], ['w', 'w', 'w', 'w', 'w', 'c', 'w', 'w', 'c', 'c', 'w', 'c', 'w'], ['w', 'c', 'c', 'c', 'c', 'c', 'c', 'w', 'w', 'c', 'c', 'c', 'w'], ['w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'w', 'c', 'w']]
-'''
