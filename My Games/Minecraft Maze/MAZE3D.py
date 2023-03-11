@@ -68,16 +68,16 @@ for z in range(len(s_maze)):
         else:
             voxel = Voxel(position=(x,y,z))
             
-# y=1
-for y in range(1,3):
-    for z in range(len(y_maze)):
-        for x in range(len(y_maze[z])):
+y=1
+# for y in range(1,3):
+for z in range(len(y_maze)):
+    for x in range(len(y_maze[z])):
 
-            if y_maze[z][x] == 'w':
-                voxel = Voxel(position=(x,y,z), 
-                            texture='brick',
-                            default_color=color.orange,
-                            )
+        if y_maze[z][x] == 'w':
+            voxel = Voxel(position=(x,y,z), 
+                        texture='brick',
+                        default_color=color.orange,
+                        )
 
 def input(key):
     if key == 'left mouse down':
