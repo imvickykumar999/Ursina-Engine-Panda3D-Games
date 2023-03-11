@@ -1,12 +1,17 @@
 
-# `Games` `Screenshots / Videos` 
+# `Games` : `Screenshots / Videos` 
 
-- Maze Game : https://youtu.be/bAvgxIyTGRc
+-------------------
+
+## `Maze 3D Game`
+- [`@imvickykumar999`](https://www.instagram.com/imvickykumar999/) [`Instagram Video`](https://www.instagram.com/p/CppUoLUO_OU/)
+
+> [![image](https://user-images.githubusercontent.com/50515418/224481936-530afe3f-cb02-42d5-af2a-333ab93c36ce.png)](https://youtu.be/bAvgxIyTGRc)
 
 ---------------------
 
 ## `Minecraft Gameplay`
-- `@imvickykumar999` [`YouTube Video`](https://www.youtube.com/watch?v=kZTDaR8o6uo)
+- [`@imvickykumar999`](https://www.youtube.com/@imvickykumar999) [`YouTube Video`](https://www.youtube.com/watch?v=kZTDaR8o6uo)
 
 > [![image](https://user-images.githubusercontent.com/50515418/224462502-20f2bc7e-b0d1-4af3-bd8c-b433e88d14b6.png)](https://www.youtube.com/watch?v=kZTDaR8o6uo)
 
