@@ -5,7 +5,7 @@ from colorama import init
 from colorama import Fore
 
 def returnMaze(h=13, w=13):
-    ## Functions
+    # printing Maze
     def printMaze(maze):
         for i in range(0, height):
             for j in range(0, width):
@@ -42,7 +42,7 @@ def returnMaze(h=13, w=13):
     width = w
     maze = []
 
-    # Initialize colorama
+    # Initialize colorama # colorful text on cmd
     init()
 
     # Denote all cells as unvisited
@@ -254,7 +254,7 @@ def returnMaze(h=13, w=13):
 
 
     # Print final maze
-    # printMaze(maze)
+    printMaze(maze)
     return maze
 
 # ---------------------------------------
@@ -263,7 +263,7 @@ from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
 app = Ursina()
-n=13 #side
+n=20 #side
 
 class Voxel(Button):
     def __init__(self, position=(0,0,0), 
@@ -279,8 +279,9 @@ class Voxel(Button):
             color=default_color,
         )
 
-# garden
+# garden, always at y=0
 y=0
+
 for z in range(n):
     for x in range(n):
         # print(z,x)
@@ -290,40 +291,41 @@ for z in range(n):
 y_maze = returnMaze(n,n)
 # print(y_maze)
 
-y=1
-# for y in range(1,3): # higher walls to avoid cheating, don't press space(jump)
-for z in range(len(y_maze)):
-    for x in range(len(y_maze[z])):
-        # print(z,x)
+# y=1
+for y in range(1,3): # higher walls to avoid cheating, don't press space(jump)
+    for z in range(len(y_maze)):
+        for x in range(len(y_maze[z])):
+            # print(z,x)
 
-        if y_maze[z][x] == 'w':
-            voxel = Voxel(position=(x,y,z), 
+            if y_maze[z][x] == 'w':
+                voxel = Voxel(position=(x,y,z), 
+                            texture='brick',
+                            default_color=color.orange,
+                            )
+                
+# y=1
+for y in range(1,3): # border walls
+    for z in range(n):
+        for x in range(n):
+            if(z == 0 or z == n - 1 or x == 0 or x == n - 1):
+                # print(z,x)
+
+                Voxel(position=(x,y,z), 
                         texture='brick',
                         default_color=color.orange,
                         )
-y=1
-# for y in range(1,3): # border walls
-for z in range(n):
-    for x in range(n):
-        if(z == 0 or z == n - 1 or x == 0 or x == n - 1):
-            # print(z,x)
-
-            Voxel(position=(x,y,z), 
-                    texture='brick',
-                    default_color=color.orange,
-                    )
 
 
-# def input(key):
-#     if key == 'left mouse down':
-#         hit_info = raycast(camera.world_position, camera.forward, distance=100)
-#         if hit_info.hit:
-#             Voxel(position=hit_info.entity.position + hit_info.normal, 
-#                   texture='brick',
-#                   default_color=color.orange,
-#                   )
-#     if key == 'right mouse down' and mouse.hovered_entity:
-#         destroy(mouse.hovered_entity)
+def input(key):
+    if key == 'left mouse down':
+        hit_info = raycast(camera.world_position, camera.forward, distance=100)
+        if hit_info.hit:
+            Voxel(position=hit_info.entity.position + hit_info.normal, 
+                  texture='brick',
+                  default_color=color.orange,
+                  )
+    if key == 'right mouse down' and mouse.hovered_entity:
+        destroy(mouse.hovered_entity)
 
 
 window.fullscreen = 1
