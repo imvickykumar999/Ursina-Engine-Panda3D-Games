@@ -1,4 +1,5 @@
 # Maze generator -- Randomized Prim Algorithm
+# https://github.com/OrWestSide/python-scripts/blob/master/maze.py#L10
 
 ## Imports
 import random
