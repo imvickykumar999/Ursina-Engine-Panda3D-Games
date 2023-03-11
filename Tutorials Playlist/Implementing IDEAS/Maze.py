@@ -279,53 +279,34 @@ class Voxel(Button):
             color=default_color,
         )
 
-# garden, always at y=0
 y=0
-
 for z in range(n):
     for x in range(n):
-        # print(z,x)
-        voxel = Voxel(position=(x,y,z))
-
+        Voxel(position=(x,y,z))
 
 y_maze = returnMaze(n,n)
-# print(y_maze)
+y=1
 
-# y=1
-for y in range(1,3): # higher walls to avoid cheating, don't press space(jump)
-    for z in range(len(y_maze)):
-        for x in range(len(y_maze[z])):
-            # print(z,x)
+# for y in range(1,3):
+for z in range(len(y_maze)):
+    for x in range(len(y_maze[z])):
 
-            if y_maze[z][x] == 'w':
-                voxel = Voxel(position=(x,y,z), 
-                            texture='brick',
-                            default_color=color.orange,
-                            )
-                
-# y=1
-for y in range(1,3): # border walls
-    for z in range(n):
-        for x in range(n):
-            if(z == 0 or z == n - 1 or x == 0 or x == n - 1):
-                # print(z,x)
-
-                Voxel(position=(x,y,z), 
+        if y_maze[z][x] == 'w':
+            voxel = Voxel(position=(x,y,z), 
                         texture='brick',
                         default_color=color.orange,
                         )
 
-
-def input(key):
-    if key == 'left mouse down':
-        hit_info = raycast(camera.world_position, camera.forward, distance=100)
-        if hit_info.hit:
-            Voxel(position=hit_info.entity.position + hit_info.normal, 
-                  texture='brick',
-                  default_color=color.orange,
-                  )
-    if key == 'right mouse down' and mouse.hovered_entity:
-        destroy(mouse.hovered_entity)
+# def input(key):
+#     if key == 'left mouse down':
+#         hit_info = raycast(camera.world_position, camera.forward, distance=100)
+#         if hit_info.hit:
+#             Voxel(position=hit_info.entity.position + hit_info.normal, 
+#                   texture='brick',
+#                   default_color=color.orange,
+#                   )
+#     if key == 'right mouse down' and mouse.hovered_entity:
+#         destroy(mouse.hovered_entity)
 
 
 window.fullscreen = 1
