@@ -254,5 +254,9 @@ def returnMaze(h=13, w=13):
 
 
     # Print final maze
-    # printMaze(maze)
+    printMaze(maze)
+    print('-'*h*4)
     return maze
+
+# Function Call
+# returnMaze()

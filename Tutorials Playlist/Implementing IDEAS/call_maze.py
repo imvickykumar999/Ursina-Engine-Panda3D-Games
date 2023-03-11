@@ -1,5 +1,8 @@
+
+# Generator : https://github.com/OrWestSide/python-scripts/blob/master/maze.py#L10
+# Solver    : https://thecleverprogrammer.com/2021/01/26/maze-solver-with-python/
+
 # Maze generator -- Randomized Prim Algorithm
-# https://github.com/OrWestSide/python-scripts/blob/master/maze.py#L10
 
 ## Imports
 import random

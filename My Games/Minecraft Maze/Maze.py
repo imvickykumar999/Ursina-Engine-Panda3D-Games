@@ -3,7 +3,34 @@ from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
 
 app = Ursina()
-n=20 #side
+n=20 # side
+c=0  # texture index
+
+opt_texture = [
+    'arrow_down',
+    'arrow_right',
+    'brick',
+    'circle',
+    'circle_outlined',
+    'cobblestone',
+    'cursor',
+    'file_icon',
+    'folder',
+    'grass',
+    'heightmap_1',
+    'horizontal_gradient',
+    'noise',
+    'radial_gradient',
+    'reflection_map_3',
+    'shore',
+    'sky_default',
+    'sky_sunset',
+    'ursina_logo',
+    'ursina_wink_0000',
+    'ursina_wink_0001',
+    'vertical_gradient',
+    'white_cube',
+]
 
 class Voxel(Button):
     def __init__(self, position=(0,0,0), 
@@ -15,28 +42,42 @@ class Voxel(Button):
             model='cube',
             origin_y=.5,
             texture=texture,
-            highlight_color=color.red,
+            highlight_color=color.yellow,
             color=default_color,
         )
 
-y=0
-for z in range(n):
-    for x in range(n):
-        Voxel(position=(x,y,z))
 
-import maze_generator as mzg
+import MAZE_generator as mzg
 y_maze = mzg.returnMaze(n,n)
+# print(y_maze)
 
-y=1
-# for y in range(1,3):
-for z in range(len(y_maze)):
-    for x in range(len(y_maze[z])):
+import MAZE_solver as mzs
+s_maze = mzs.solve_maze(y_maze)
+# print(s_maze)
 
-        if y_maze[z][x] == 'w':
-            voxel = Voxel(position=(x,y,z), 
-                        texture='brick',
-                        default_color=color.orange,
+y=0
+for z in range(len(s_maze)):
+    for x in range(len(s_maze[z])):
+
+        if y_maze[z][x] == 'p':
+            Voxel(position=(x,y,z), 
+                        texture=opt_texture[c%len(opt_texture)],
+                        default_color=color.blue,
                         )
+            c+=1
+        else:
+            voxel = Voxel(position=(x,y,z))
+            
+# y=1
+for y in range(1,3):
+    for z in range(len(y_maze)):
+        for x in range(len(y_maze[z])):
+
+            if y_maze[z][x] == 'w':
+                voxel = Voxel(position=(x,y,z), 
+                            texture='brick',
+                            default_color=color.orange,
+                            )
 
 def input(key):
     if key == 'left mouse down':
@@ -50,8 +91,8 @@ def input(key):
     #     destroy(mouse.hovered_entity)
 
 
-# window.fullscreen = 1
-player = FirstPersonController(gravity=1)
+window.fullscreen = 1
+player = FirstPersonController(gravity=.4)
 
 def update():
     # print(player.x, player.z)
