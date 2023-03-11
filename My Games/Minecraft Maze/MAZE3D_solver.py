@@ -69,6 +69,6 @@ def solve_maze(maze):
     return maze
 
 # # Function Call
-# import MAZE_generator as mzg
+# import MAZE3D_generator as mzg
 # maze = mzg.returnMaze()
 # solve_maze(maze)

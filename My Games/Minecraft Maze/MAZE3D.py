@@ -47,11 +47,11 @@ class Voxel(Button):
         )
 
 
-import MAZE_generator as mzg
+import MAZE3D_generator as mzg
 y_maze = mzg.returnMaze(n,n)
 # print(y_maze)
 
-import MAZE_solver as mzs
+import MAZE3D_solver as mzs
 s_maze = mzs.solve_maze(y_maze)
 # print(s_maze)
 
