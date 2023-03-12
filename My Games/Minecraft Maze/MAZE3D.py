@@ -5,7 +5,7 @@ from CallMe import MAZE3D_generator as mzg
 from ursina import *
 
 app = Ursina()
-n=10 # side
+n=10 # initial maze side
 c=0  # texture index
 
 opt_texture = [
@@ -50,7 +50,6 @@ class Voxel(Button):
 
 
 for k in [0,-30,-50]:
-    y=k
     n+=5
 
     y_maze = mzg.returnMaze(n,n)
@@ -59,6 +58,7 @@ for k in [0,-30,-50]:
     s_maze = mzs.solve_maze(y_maze)
     # print(s_maze)
 
+    y=k
     for z in range(len(s_maze)):
         for x in range(len(s_maze[z])):
             c+=1
@@ -72,16 +72,16 @@ for k in [0,-30,-50]:
             else:
                 voxel = Voxel(position=(x,y,z))
                 
-    y=k+1
-    # for y in range(k+1,k+3):
-    for z in range(len(y_maze)):
-        for x in range(len(y_maze[z])):
+    # y=k+1                    # for lower wall
+    for y in range(k+1,k+3):   # for higher wall
+        for z in range(len(y_maze)):
+            for x in range(len(y_maze[z])):
 
-            if y_maze[z][x] == 'w':
-                voxel = Voxel(position=(x,y,z), 
-                            texture='brick',
-                            default_color=color.orange,
-                            )
+                if y_maze[z][x] == 'w':
+                    voxel = Voxel(position=(x,y,z), 
+                                texture='brick',
+                                default_color=color.orange,
+                                )
 
 def input(key):
     if key == 'left mouse down':
@@ -91,7 +91,8 @@ def input(key):
                   texture='brick',
                   default_color=color.orange,
                   )
-    # if key == 'right mouse down' and mouse.hovered_entity:
+    # # removing wall is not allowed.
+    # if key == 'right mouse down' and mouse.hovered_entity: 
     #     destroy(mouse.hovered_entity)
 
 
@@ -102,7 +103,7 @@ def update():
     # print(player.y)
 
     if (player.x > n-3 and player.z > n-2) or (player.x < 2 and player.z < 2):
-        print_on_screen("Jump Down to switch Levels", position=(0,0))     
+        print_on_screen("Jump Down to switch Levels", position=(-.1,0))     
 
     if player.y > -2:
         print_on_screen("Level 1", position=(0,.1))
