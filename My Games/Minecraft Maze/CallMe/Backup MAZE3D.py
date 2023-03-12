@@ -1,7 +1,7 @@
 
 from ursina.prefabs.first_person_controller import FirstPersonController as FPC
-from CallMe import MAZE3D_solver as mzs
-from CallMe import MAZE3D_generator as mzg
+import MAZE3D_solver as mzs
+import MAZE3D_generator as mzg
 from ursina import *
 
 app = Ursina()
@@ -43,29 +43,27 @@ class Voxel(Button):
             position=position,
             model='cube',
             origin_y=.5,
-            # scale=(.5,.5,.5),
             texture=texture,
             highlight_color=color.yellow,
             color=default_color,
         )
 
-p=-2
+
 for k in [0,-30,-50]:
     n+=5
-    p+=1
 
-    us_maze = mzg.returnMaze(n,n)
-    # print(us_maze) # UNsolved
+    y_maze = mzg.returnMaze(n,n)
+    # print(y_maze)
 
-    s_maze = mzs.solve_maze(us_maze)
-    # print(s_maze) # Solved
+    s_maze = mzs.solve_maze(y_maze)
+    # print(s_maze)
 
     y=k
     for z in range(len(s_maze)):
         for x in range(len(s_maze[z])):
             c+=1
 
-            if us_maze[z][x] == 'p':
+            if y_maze[z][x] == 'p':
                 Voxel(position=(x,y,z), 
                             texture=opt_texture[c%len(opt_texture)],
                             # texture='ursina_logo',
@@ -74,17 +72,16 @@ for k in [0,-30,-50]:
             else:
                 voxel = Voxel(position=(x,y,z))
                 
-    y=k+1                          # for lower wall
-    # for y in range(k+1,k+3+p):   # for higher wall
-    for z in range(len(us_maze)):
-        for x in range(len(us_maze[z])):
+    # y=k+1                    # for lower wall
+    for y in range(k+1,k+3):   # for higher wall
+        for z in range(len(y_maze)):
+            for x in range(len(y_maze[z])):
 
-            if us_maze[z][x] == 'w':
-                voxel = Voxel(position=(x,y,z), 
-                            texture='brick',
-                            # scale=(.5,.5,.5),
-                            default_color=color.orange,
-                            )
+                if y_maze[z][x] == 'w':
+                    voxel = Voxel(position=(x,y,z), 
+                                texture='brick',
+                                default_color=color.orange,
+                                )
 
 def input(key):
     if key == 'left mouse down':
@@ -92,7 +89,6 @@ def input(key):
         if hit_info.hit:
             Voxel(position=hit_info.entity.position + hit_info.normal, 
                   texture='brick',
-                #   scale=(.5,.5,.5),
                   default_color=color.orange,
                   )
     # # removing wall is not allowed.
@@ -100,13 +96,13 @@ def input(key):
     #     destroy(mouse.hovered_entity)
 
 
-window.fullscreen = True
-player = FPC(gravity=.07)
+window.fullscreen = 1
+player = FPC(gravity=.08)
 
 def update():
     # print(player.y)
 
-    if (player.x > n-3 and player.z > n-3) or (player.x < 3 and player.z < 3):
+    if (player.x > n-3 and player.z > n-2) or (player.x < 2 and player.z < 2):
         print_on_screen("Jump Down to switch Levels", position=(-.1,0))     
 
     if player.y > -2:
