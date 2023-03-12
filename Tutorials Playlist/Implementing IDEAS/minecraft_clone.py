@@ -66,7 +66,7 @@ def input(key):
         destroy(mouse.hovered_entity)
 
 
-# window.fullscreen = 1
+window.fullscreen = 1
 player = FirstPersonController(gravity=.6)
 
 # https://stackoverflow.com/a/75692459/11493297
