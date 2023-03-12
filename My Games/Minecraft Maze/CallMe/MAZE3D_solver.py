@@ -65,7 +65,7 @@ def solve_maze(maze):
     rat_path = [start]
     escape()
 
-    maze_solver()
+    maze_solver() # it prints solved maze
     return maze
 
 # # Function Call

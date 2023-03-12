@@ -253,7 +253,7 @@ def returnMaze(h=13, w=13):
             break
 
 
-    # Print final maze
+    # it prints unsolved maze
     # printMaze(maze)
     # print('-'*h*4)
     return maze

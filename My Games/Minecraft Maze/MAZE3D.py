@@ -1,9 +1,11 @@
 
+from ursina.prefabs.first_person_controller import FirstPersonController as FPC
+from CallMe import MAZE3D_solver as mzs
+from CallMe import MAZE3D_generator as mzg
 from ursina import *
-from ursina.prefabs.first_person_controller import FirstPersonController
 
 app = Ursina()
-n=20 # side
+n=10 # side
 c=0  # texture index
 
 opt_texture = [
@@ -47,37 +49,39 @@ class Voxel(Button):
         )
 
 
-import MAZE3D_generator as mzg
-y_maze = mzg.returnMaze(n,n)
-# print(y_maze)
+for k in [0,-30,-50]:
+    y=k
+    n+=5
 
-import MAZE3D_solver as mzs
-s_maze = mzs.solve_maze(y_maze)
-# print(s_maze)
+    y_maze = mzg.returnMaze(n,n)
+    # print(y_maze)
 
-y=0
-for z in range(len(s_maze)):
-    for x in range(len(s_maze[z])):
+    s_maze = mzs.solve_maze(y_maze)
+    # print(s_maze)
 
-        if y_maze[z][x] == 'p':
-            Voxel(position=(x,y,z), 
-                        texture=opt_texture[c%len(opt_texture)],
-                        default_color=color.blue,
-                        )
+    for z in range(len(s_maze)):
+        for x in range(len(s_maze[z])):
             c+=1
-        else:
-            voxel = Voxel(position=(x,y,z))
-            
-y=1
-# for y in range(1,3):
-for z in range(len(y_maze)):
-    for x in range(len(y_maze[z])):
 
-        if y_maze[z][x] == 'w':
-            voxel = Voxel(position=(x,y,z), 
-                        texture='brick',
-                        default_color=color.orange,
-                        )
+            if y_maze[z][x] == 'p':
+                Voxel(position=(x,y,z), 
+                            texture=opt_texture[c%len(opt_texture)],
+                            # texture='ursina_logo',
+                            default_color=color.blue,
+                            )
+            else:
+                voxel = Voxel(position=(x,y,z))
+                
+    y=k+1
+    # for y in range(k+1,k+3):
+    for z in range(len(y_maze)):
+        for x in range(len(y_maze[z])):
+
+            if y_maze[z][x] == 'w':
+                voxel = Voxel(position=(x,y,z), 
+                            texture='brick',
+                            default_color=color.orange,
+                            )
 
 def input(key):
     if key == 'left mouse down':
@@ -92,16 +96,23 @@ def input(key):
 
 
 window.fullscreen = 1
-player = FirstPersonController(gravity=.4)
+player = FPC(gravity=.08)
 
 def update():
-    # print(player.x, player.z)
+    # print(player.y)
 
-    if player.x > n-2 and player.z > n-2:
-        print_on_screen("You Won", position=(0,0))
-        
-    if player.y < -10:
-        player.y = 10
+    if (player.x > n-3 and player.z > n-2) or (player.x < 2 and player.z < 2):
+        print_on_screen("Jump Down to switch Levels", position=(0,0))     
+
+    if player.y > -2:
+        print_on_screen("Level 1", position=(0,.1))
+    elif player.y > -32:
+        print_on_screen("Level 2", position=(0,.2))
+    else:
+        print_on_screen("Level 3", position=(0,.3))
+
+    if player.y < -51:
+        player.y = 30
 
 Sky()
 app.run()
