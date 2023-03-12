@@ -34,11 +34,12 @@ opt_texture = [
     'white_cube',
 ]
 
-class Voxel(Button):
+class Entity(Button):
     def __init__(self, position=(0,0,0), 
                  texture='grass',
                  default_color=color.green,
                  ):
+        
         super().__init__(parent=scene,
             position=position,
             model='cube',
@@ -66,13 +67,14 @@ for k in [0,-30,-50]:
             c+=1
 
             if us_maze[z][x] == 'p':
-                Voxel(position=(x,y,z), 
-                            texture=opt_texture[c%len(opt_texture)],
-                            # texture='ursina_logo',
-                            default_color=color.blue,
-                            )
+                Entity(position=(x,y,z), 
+                    texture=opt_texture[c%len(opt_texture)],
+                    # texture='ursina_logo',
+                    default_color=color.blue,
+                    )
             else:
-                voxel = Voxel(position=(x,y,z))
+                Entity(position=(x,y,z))
+                # voxel = Voxel(position=(x,y,z))
                 
     y=k+1                          # for lower wall
     # for y in range(k+1,k+3+p):   # for higher wall
@@ -80,21 +82,23 @@ for k in [0,-30,-50]:
         for x in range(len(us_maze[z])):
 
             if us_maze[z][x] == 'w':
-                voxel = Voxel(position=(x,y,z), 
-                            texture='brick',
-                            # scale=(.5,.5,.5),
-                            default_color=color.orange,
-                            )
+                Entity(position=(x,y,z), 
+                    texture='brick',
+                    # scale=(.5,.5,.5),
+                    default_color=color.orange,
+                    )
 
 def input(key):
     if key == 'left mouse down':
         hit_info = raycast(camera.world_position, camera.forward, distance=100)
+
         if hit_info.hit:
-            Voxel(position=hit_info.entity.position + hit_info.normal, 
-                  texture='brick',
-                #   scale=(.5,.5,.5),
-                  default_color=color.orange,
-                  )
+            Entity(position=hit_info.entity.position + hit_info.normal, 
+                texture='brick',
+            #   scale=(.5,.5,.5),
+                default_color=color.orange,
+                )
+            
     # # removing wall is not allowed.
     # if key == 'right mouse down' and mouse.hovered_entity: 
     #     destroy(mouse.hovered_entity)
@@ -107,7 +111,8 @@ def update():
     # print(player.y)
 
     if (player.x > n-3 and player.z > n-3) or (player.x < 3 and player.z < 3):
-        print_on_screen("Jump Down to switch Levels", position=(-.1,0))     
+        print_on_screen("Jump Down to switch Levels", position=(-.1,0), 
+                        font = 'AbyssinicaSIL-Regular.ttf')     
 
     if player.y > -2:
         print_on_screen("Level 1", position=(0,.1))
