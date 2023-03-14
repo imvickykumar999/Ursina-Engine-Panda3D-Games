@@ -4,7 +4,7 @@
 ## *`3D Tic Tac Toe Game`*
 - [`Tic Tac Toe.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/df02f5ffb4f598edc4531f8877d625cba32dbf36/Tutorials%20Playlist/Implementing%20IDEAS/Tic%20Tac%20Toe%20Minecraft/Tic%20Tac%20Toe.py#L54)
 
-> ![ss](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/main/Tutorials%20Playlist/Implementing%20IDEAS/Tic%20Tac%20Toe%20Minecraft/static/Screenshot%202023-03-13%20202949.png?raw=true)
+> ![image](https://user-images.githubusercontent.com/50515418/225080970-2a171797-40ef-4516-b9db-b7b822077e4f.png)
 
 -------------------
 
