@@ -89,6 +89,11 @@ for k in [0,-30,-50]:
                     )
 
 def input(key):
+    if key == 'right mouse down': 
+        player.x = hit_info.entity.position.x
+        player.y = hit_info.entity.position.y
+        player.z = hit_info.entity.position.z
+        
     if key == 'left mouse down':
         hit_info = raycast(camera.world_position, camera.forward, distance=100)
 
