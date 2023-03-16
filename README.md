@@ -7,7 +7,7 @@
 
 - [`Audio_Sphere.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/6079511aa23034f9b616ceee2932c7d71257d09a/Implementing%20IDEAS/Visualise%20Audio/Audio_Sphere.py#L68)
 
-> [![YouTube](https://user-images.githubusercontent.com/50515418/225542436-6179d8f5-e2d6-41af-992c-58a867699523.png)](https://youtu.be/l7x02mYoD1E)
+> [![YouTube](https://user-images.githubusercontent.com/50515418/225542436-6179d8f5-e2d6-41af-992c-58a867699523.png)](https://youtu.be/l7x02mYoD1E?t=64)
 
 -------------------
 
