@@ -1,5 +1,15 @@
 
-# 🎮 `Games` : `Screenshots / Videos` 
+# 🎮 `Games` : `Screenshots / Videos`
+
+---------------
+
+## 🎉🪩 *`Vestido Sobe Song` || `Audio Visualizer`*
+
+- [`Audio_Sphere.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/6079511aa23034f9b616ceee2932c7d71257d09a/Implementing%20IDEAS/Visualise%20Audio/Audio_Sphere.py#L68)
+
+> [![YouTube](https://user-images.githubusercontent.com/50515418/225542436-6179d8f5-e2d6-41af-992c-58a867699523.png)](https://youtu.be/l7x02mYoD1E)
+
+-------------------
 
 ## *`3D Tic Tac Toe Game`*
 - [`Tic Tac Toe.py`](https://github.com/imvickykumar999/Ursina-Engine-Panda3D-Games/blob/df02f5ffb4f598edc4531f8877d625cba32dbf36/Tutorials%20Playlist/Implementing%20IDEAS/Tic%20Tac%20Toe%20Minecraft/Tic%20Tac%20Toe.py#L54)
@@ -8,39 +18,39 @@
 
 -------------------
 
-## `Maze 3D Game`
+## *`Maze 3D Game`*
 - [`@imvickykumar999`](https://www.instagram.com/imvickykumar999/) [`Instagram Video`](https://www.instagram.com/p/CppUoLUO_OU/)
 
 > [![image](https://user-images.githubusercontent.com/50515418/224481936-530afe3f-cb02-42d5-af2a-333ab93c36ce.png)](https://youtu.be/bAvgxIyTGRc)
 
 ---------------------
 
-## `Minecraft Gameplay` 
+## *`Minecraft Gameplay`*
     Task Idea 💡: MultiPlayer using 2 cube object and different set of AWS:D keys.
     
 - [`@imvickykumar999`](https://www.youtube.com/@imvickykumar999) [`YouTube Video`](https://www.youtube.com/watch?v=kZTDaR8o6uo)
 
 > [![image](https://user-images.githubusercontent.com/50515418/224462502-20f2bc7e-b0d1-4af3-bd8c-b433e88d14b6.png)](https://www.youtube.com/watch?v=kZTDaR8o6uo)
 
-## `Rotating Texture.py`
+## *`Rotating Texture.py`*
 
 > https://user-images.githubusercontent.com/50515418/222709081-99517ef4-c644-438a-bc60-5a23fde3cc1b.mp4
 
-## `Setting Boundaries for the Movement.py`
+## *`Setting Boundaries for the Movement.py`*
 
 > https://user-images.githubusercontent.com/50515418/222423897-075f981d-a40f-4e5c-8377-bc42a957cd75.mp4
 
 ----------------------------
 
-# Tutorial PlayList
+# *Tutorial PlayList*
 
-### - [Ursina Engine – 3D Python Game Engine Tutorial](https://www.youtube.com/watch?v=w2gu9Ah95l0&list=PLgQYnHnDxgtg-I3m01mGc5wfJwqpT9S3i&index=1)
+### - [**Ursina Engine – 3D Python Game Engine Tutorial**](https://www.youtube.com/watch?v=w2gu9Ah95l0&list=PLgQYnHnDxgtg-I3m01mGc5wfJwqpT9S3i&index=1)
 
-### - [Minecraft in Python](https://www.youtube.com/watch?v=vX4l-qozib8&list=PLmP1LNMzp97pQe1FiGpdOLKeWYfTMZM7n&index=1)
+### - [**Minecraft in Python**](https://www.youtube.com/watch?v=vX4l-qozib8&list=PLmP1LNMzp97pQe1FiGpdOLKeWYfTMZM7n&index=1)
 
 ---------------------------------
 
-# Important Repositories 
+# *Important Repositories* 
 
 - [ursina](https://github.com/imvickykumar999/ursina/tree/master/samples)
 
@@ -82,7 +92,7 @@
 
 -----------------------------
 
-## `Just Cause 2 Game` : [`Free Download`](https://drive.google.com/drive/u/1/folders/1Wf_P-342R4OMO7sIQV2AHJET3h4eZe4W)
+## *`Just Cause 2 Game`* : [**`Free Download`**](https://drive.google.com/drive/u/1/folders/1Wf_P-342R4OMO7sIQV2AHJET3h4eZe4W)
 
 > [![image](https://user-images.githubusercontent.com/50515418/222048156-a8f4e377-e2c6-46e2-8fa5-e9654049f3ca.png)](https://youtu.be/eOtUhJXLH2Q?t=1598)
 
