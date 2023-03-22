@@ -49,6 +49,11 @@ for y in range(0,101,50):
         for x in range(12):
             voxel = Voxel(position=(x,y,z))
 
+# for y in range(10):
+#     for z in range(15-y):
+        # for x in range(15-y):
+#             voxel = Voxel(position=(0,y,z))
+
 def input(key):
     global c
     c+=1
