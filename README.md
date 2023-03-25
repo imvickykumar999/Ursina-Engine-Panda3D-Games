@@ -1,7 +1,7 @@
 
 # 🎮 `Games` : `Screenshots / Videos`
 
-> [![image](https://user-images.githubusercontent.com/50515418/227538012-a420cae5-e90f-4d1e-922a-1b0aa1e8c728.png)](https://youtu.be/p4_mlkkad-s)
+> [![image](https://user-images.githubusercontent.com/50515418/227538012-a420cae5-e90f-4d1e-922a-1b0aa1e8c728.png)](https://www.youtube.com/playlist?list=PLyeWzbpbicN2YwGcFtYrD_K1_A2n7KtcJ)
 
 ---------------
 
