@@ -89,15 +89,16 @@ for k in [0,-30,-50]:
                     )
 
 def input(key):
+    hit_info = raycast(camera.world_position, camera.forward, distance=100)
+
     if key == 'right mouse down': 
         player.x = hit_info.entity.position.x
         player.y = hit_info.entity.position.y
         player.z = hit_info.entity.position.z
         
     if key == 'left mouse down':
-        hit_info = raycast(camera.world_position, camera.forward, distance=100)
-
         if hit_info.hit:
+            
             Entity(position=hit_info.entity.position + hit_info.normal, 
                 texture='brick',
             #   scale=(.5,.5,.5),
@@ -116,8 +117,7 @@ def update():
     # print(player.y)
 
     if (player.x > n-3 and player.z > n-3) or (player.x < 3 and player.z < 3):
-        print_on_screen("Jump Down to switch Levels", position=(-.1,0), 
-                        font = 'AbyssinicaSIL-Regular.ttf')     
+        print_on_screen("Jump Down to switch Levels", position=(-.1,0))     
 
     if player.y > -2:
         print_on_screen("Level 1", position=(0,.1))
