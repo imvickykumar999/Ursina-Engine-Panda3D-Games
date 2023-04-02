@@ -76,9 +76,12 @@ def input(key):
         player.y = hit_info.entity.position.y
         player.z = hit_info.entity.position.z
 
+    if key == 'f': # anti-gravity
+        player.gravity *= -1
+
 
 window.fullscreen = 1
-player = FirstPersonController(gravity=.6)
+player = FirstPersonController(gravity=.5)
 
 # https://stackoverflow.com/a/75692459/11493297
 def update():
