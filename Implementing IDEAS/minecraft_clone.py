@@ -85,7 +85,7 @@ def update():
     # print('Player is at Height = ', player.y)
 
     if player.y < -10:
-        player.y = 110   # No infinite falling.
+        player.y = 140   # No infinite falling.
 
 # player = FirstPersonController(
                     # model='sphere', 
