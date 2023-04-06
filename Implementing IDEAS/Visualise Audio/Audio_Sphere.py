@@ -5,7 +5,7 @@ import time
 import librosa
 import os
 
-filename = 'Vestido Sobe.mp3'
+filename = 'input/Vestido Sobe.mp3'
 y, sr = librosa.load(filename)
 t1 = int(time.time())
 i=0
