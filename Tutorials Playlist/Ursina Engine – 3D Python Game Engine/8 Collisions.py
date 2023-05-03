@@ -15,12 +15,13 @@ def update():
     if hit_info.hit:
         dx =- dx # bounce back
         
-        ball.color = color.rgb(R,G,B)
+        ball .color = color.rgb(R,G,B)
         box_2.color = color.rgb(B,R,G)
         box_1.color = color.rgb(G,B,R)
 
     if hit_info.entity in boxes:
-        destroy(hit_info.entity)
+        # destroy(hit_info.entity)
+        pass
 
 
 app = Ursina()
