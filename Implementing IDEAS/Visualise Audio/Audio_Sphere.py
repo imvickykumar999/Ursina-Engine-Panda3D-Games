@@ -5,14 +5,16 @@ import time
 import librosa
 import os
 
-filename = 'input/Vestido Sobe.mp3'
+filename = 'input/Dior.mp3'
+# https://youtu.be/S0nOYs0PRak
+
 y, sr = librosa.load(filename)
 t1 = int(time.time())
 i=0
 
 app = Ursina()
 camera.position = (5,0,-30)
-os.startfile(filename)
+# os.startfile(filename)
 
 c=0
 opt_texture = [

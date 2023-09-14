@@ -9,8 +9,9 @@ def save_plot(filename):
     plt.xlabel('time')
     plt.ylabel('amplitude')
     plt.plot(y)
-    plt.savefig('output/Vestido Sobe.png')
+    plt.savefig('output/Dior.png')
     return y
 
-y = save_plot('input/Vestido Sobe.mp3')
+y = save_plot('input/Dior.mp3')
+# https://youtu.be/S0nOYs0PRak
 print(y)
